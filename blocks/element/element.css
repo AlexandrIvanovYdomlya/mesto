@@ -1,0 +1,17 @@
+.element{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  position: relative;
+  width: 282px;
+  height: 362px;
+  overflow: hidden;
+  object-fit: contain;
+  border-radius: 2%;
+  background-color: white;
+  color: black;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+}

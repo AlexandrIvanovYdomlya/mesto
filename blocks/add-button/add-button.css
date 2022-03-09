@@ -1,0 +1,14 @@
+.add-button{
+  margin-top: 36px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .add-button{
+    margin-top: 33px;
+  }
+}
+
+.add-button:hover{
+  opacity: 0.8;
+}

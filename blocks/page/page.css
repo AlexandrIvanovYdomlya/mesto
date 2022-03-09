@@ -1,0 +1,11 @@
+.page{
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width:767px) {
+  .page{
+    width: 100%;
+  }
+}

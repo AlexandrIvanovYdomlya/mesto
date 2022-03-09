@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Место</title>
+    <link rel="stylesheet" href="pages/index.css">
+  </head>
+  <body class="body">
+    <div class="page">
+        <header class="header">
+          <img class="header__logo" src="images/header__logo.svg" alt="лого">
+        </header>
+
+
+
+        <main class="content">
+
+          <section class="profile">
+            <img class="profile__avatar" src="images/head.jpg" alt="голова мужика">
+            <div class="profile__info">
+              <!--<div>-->
+                <h2 class="profile__title">Жак-Ив Кусто</h2>
+                <button class="profile__edit-button"></button>
+              <!--</div>-->
+              <p class="profile__subtitle">Исследователь океана</p>
+            </div>
+            <picture class="add-button">
+              <source media="(max-width: 767px)" srcset="images/button-mobile.svg">
+              <img src="images/button-desktop.svg"  alt="кнопка">
+            </picture>
+          </section>
+
+
+          <section class="section-elements">
+            <ul class="elements">
+              <li class="element">
+                <img class="element__photo" src="images/karachaevsk.jpg" alt="карачаевск">
+                <p class="element__name">Карачаевск</p>
+                <img class="element__like" src="images/like.svg" alt="сердце">
+              </li>
+              <li class="element">
+                <img class="element__photo" src="images/karachaevsk.jpg" alt="карачаевск">
+                <p class="element__name">Гора Эльбрус</p>
+                <img class="element__like" src="images/like.svg" alt="сердце">
+              </li>
+              <li class="element">
+                <img class="element__photo" src="images/karachaevsk.jpg" alt="карачаевск">
+                <p class="element__name">Домбай</p>
+                <img class="element__like" src="images/like.svg" alt="сердце">
+              </li>
+              <li class="element">
+                <img class="element__photo" src="images/karachaevsk.jpg" alt="карачаевск">
+                <p class="element__name">Гора Эльбрус</p>
+                <img class="element__like" src="images/like.svg" alt="сердце">
+              </li>
+              <li class="element">
+                <img class="element__photo" src="images/karachaevsk.jpg" alt="карачаевск">
+                <p class="element__name">Карачаевск</p>
+                <img class="element__like" src="images/like.svg" alt="сердце">
+              </li>
+              <li class="element">
+                <img class="element__photo" src="images/karachaevsk.jpg" alt="карачаевск">
+                <p class="element__name">Карачаевск</p>
+                <img class="element__like" src="images/like.svg" alt="сердце">
+              </li>
+          </ul>
+          </section>
+
+        </main>
+        
+
+        <footer class="footer">
+          <p class="footer__copyright">© 2022 Александр</p>
+        </footer>
+
+
+        <div class="popup">
+          <form class="popup__form">
+            <button class="popup__close"></button>
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <input type="text" class="input__text input__name">
+            <input type="text" class="input__text input__description">
+            <button class="popup__edit-button" type="submit" aria-label="кнопка сохранения">
+              Сохранить
+            </button>
+          </form>
+        </div>
+
+
+      </div>
+      <script src="./index.js"></script>
+    </body>
+  </html>
