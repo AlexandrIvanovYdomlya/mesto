@@ -2,6 +2,8 @@
 
 ### Сайт для изучения js
 
+https://alexandrivanovydomlya.github.io/mesto/index.html
+
 * Figma
 * Картинки
 
