@@ -11,7 +11,11 @@ let closeButton = document.querySelector('.popup__close');
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
-  
+
+
+  //profileName.textContent = profileName;
+  //profileDescription.textContent = profileDescription;
+
   profileName.textContent = nameInput.value;
   profileDescription.textContent = jobInput.value;
   
@@ -24,6 +28,9 @@ function closePopup(){
 
 function openPopup(){
   popup.classList.add('popup_opened')
+
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileDescription.textContent;
 }
 
 closeButton.addEventListener('click', closePopup);

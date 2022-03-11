@@ -17,3 +17,7 @@
     height: 20px;
   }
 }
+
+.popup__close:hover{
+  opacity: .8;
+}
