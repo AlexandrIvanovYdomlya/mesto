@@ -1,4 +1,7 @@
 .add-button{
+  background-image: url("../../images/button-desktop.svg");
+  background-size: contain;
+  margin-right: 0;
   margin-top: 36px;
   cursor: pointer;
 }

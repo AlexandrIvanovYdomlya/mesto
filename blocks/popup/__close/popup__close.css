@@ -4,10 +4,11 @@
   position: relative;
   top: -40px;
   right: -430px;
-  background-size: contain;
+  /*background-size: contain;*/
   background-image: url(../../../images/close-desktop.svg);
-  background-color: transparent;
+  /*background-color: transparent;
   border: none;
+  cursor: pointer;*/
 }
 
 @media screen and (max-width:767px) {
@@ -19,5 +20,5 @@
 }
 
 .popup__close:hover{
-  opacity: .8;
+  opacity: .6;
 }

@@ -1,5 +1,5 @@
 
-let formElement = document.querySelector('.popup__form')
+let formElement = document.querySelector('.popup__form');
 let nameInput = document.querySelector('.input__name');
 let jobInput = document.querySelector('.input__description');
 let editButton = document.querySelector('.profile__edit-button');
