@@ -1,3 +1,7 @@
 .button{
     background-size: contain;
+    /*background-color: transparent;*/
+    border: none;
+    cursor: pointer;
+    border: none;
 }

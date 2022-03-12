@@ -9,7 +9,7 @@
   line-height: 17px;
   margin-left: 35px;
   margin-right: 35px;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
   width: 358px;
   height: 27px;
 }
@@ -17,6 +17,8 @@
 @media screen and (max-width: 767px) {
   .input__text{
     width: 238px;
+    height: 35px;
     margin-left: 22px;
+    margin-bottom: 21px;
   }
 }

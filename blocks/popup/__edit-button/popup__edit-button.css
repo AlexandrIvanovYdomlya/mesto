@@ -10,12 +10,16 @@
   height: 50px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 23px;
   cursor: pointer;
 }
 
 @media screen and (max-width: 767px){
   .popup__edit-button{
     width: 238px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
   }
 }
 

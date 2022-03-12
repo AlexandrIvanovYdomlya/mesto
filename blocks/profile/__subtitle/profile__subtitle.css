@@ -4,6 +4,16 @@
   margin-top: 5px;
   font-style: normal;
   font-weight: normal;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 22px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 336px;
+}
+
+@media screen and (max-width:767px){
+  .profile__subtitle{
+    max-width: 320px;
+  }
 }

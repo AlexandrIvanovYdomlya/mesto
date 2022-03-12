@@ -1,14 +1,17 @@
 .add-button{
   background-image: url("../../images/button-desktop.svg");
-  background-size: contain;
   margin-right: 0;
   margin-top: 36px;
   cursor: pointer;
+  width: 150px;
+  height: 50px;
 }
 
 @media screen and (max-width: 767px) {
   .add-button{
+    width: 282px;
     margin-top: 33px;
+    background-image: url("../../images/button-mobile.svg");
   }
 }
 
