@@ -1,6 +1,6 @@
-.popup__form{
+.popup__container{
   display: flex;
-  flex-direction: column;/*
+  flex-direction: column;
   width: 430px;
   height: 330px;
   background-color: #fff;
@@ -8,15 +8,12 @@
   margin-top: 201px;
   margin-right: auto;
   margin-left: auto;
-  */
 }
-/*
+
 @media screen and (max-width: 767px) {
-  .popup__form{
+  .popup__container{
     width: 282px;
     height: 322px;
     margin-top: 123px;
   }
 }
-
- */

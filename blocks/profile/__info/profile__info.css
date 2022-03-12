@@ -6,7 +6,7 @@
   align-self: start;
   /*position: relative;
   left: -100px;*/
-  width: 100%;
+  width: calc(100% - 34%);
 }
 /*
 @media screen and (max-width: 1024px){

@@ -5,6 +5,8 @@
   bottom: 30px;
   right: 20px;
   cursor: pointer;
+  background-image: url("../../../images/like.svg");
+  background-color: transparent;
 }
 
 .element__like:hover{

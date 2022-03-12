@@ -1,4 +1,10 @@
 .profile__title-container{
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width:767px) {
+  .profile__title-container{
+    padding-left: 17px;
+  }
 }

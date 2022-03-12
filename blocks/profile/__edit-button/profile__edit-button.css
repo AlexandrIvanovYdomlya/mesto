@@ -14,8 +14,9 @@
     margin: 0;
     padding: 0;
     margin-top: 10px;
-    /*position: absolute;*/
-    left: 266px;
+    position: relative;
+    left: 10px;
+    bottom: 1px;
     width: 18px;
     height: 18px;
   }

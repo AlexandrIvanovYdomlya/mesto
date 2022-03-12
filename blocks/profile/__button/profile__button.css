@@ -1,4 +1,4 @@
-.add-button{
+.profile__button{
   background-color: black;
   background-repeat: no-repeat;
   background-image: url("../../images/button-desktop.svg");
@@ -11,7 +11,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .add-button{
+  .profile__button{
     width: 282px;
     margin-top: 31px;
     background-image: url("../../images/button-mobile.svg");
@@ -19,6 +19,6 @@
   }
 }
 
-.add-button:hover{
+.profile__button:hover{
   opacity: 0.8;
 }
