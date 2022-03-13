@@ -7,4 +7,5 @@
   background-color: #000;
   color: #fff;
   font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
 }

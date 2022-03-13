@@ -1,7 +1,7 @@
-.add-button{
+.profile__add-button{
   background-color: black;
   background-repeat: no-repeat;
-  background-image: url("../../images/button-desktop.svg");
+  background-image: url("../../../images/button-desktop.svg");
   margin-right: 0;
   margin-top: 36px;
   cursor: pointer;
@@ -11,14 +11,14 @@
 }
 
 @media screen and (max-width: 767px) {
-  .add-button{
+  .profile__add-button{
     width: 282px;
     margin-top: 31px;
-    background-image: url("../../images/button-mobile.svg");
+    background-image: url("../../../images/button-mobile.svg");
     background-size: cover;
   }
 }
 
-.add-button:hover{
+.profile__add-button:hover{
   opacity: 0.8;
 }
