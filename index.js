@@ -63,6 +63,13 @@ function openPopup(){
   jobInput.value = profileDescription.textContent;
 }
 
+function addCard(name, link){
+  const cardTemplate = document.querySelector('.element__name'/*'#element-template'*/).content;
+  const linkTemplate = document.querySelector('.'/*'#element-template'*/).content;
+
+
+}
+
 closeButton.addEventListener('click', closePopup);
 editButton.addEventListener('click', openPopup);
 formElement.addEventListener('submit', formSubmitHandler);
