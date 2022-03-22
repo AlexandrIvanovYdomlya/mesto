@@ -9,7 +9,10 @@ let profileDescription = document.querySelector('.profile__subtitle');
 let popup = document.querySelector('.popup');
 let closeButton = document.querySelector('.popup__close');
 let body = document.querySelector('.body')
-
+const cardTemplate = document.querySelector('#element-template').content;
+const elementPhoto = document.querySelector('.element__photo');
+const elementName = document.querySelector('.element__name');
+const cardElement = document.querySelector('.element').cloneNode(true);
 const initialCards = [
   {
     name: 'Архыз',
@@ -66,8 +69,10 @@ function openPopup(){
 function addCard(name, link){
   const cardTemplate = document.querySelector('.element__name'/*'#element-template'*/).content;
   const linkTemplate = document.querySelector('.'/*'#element-template'*/).content;
+}
 
-
+function startSetCards(){
+  
 }
 
 closeButton.addEventListener('click', closePopup);
