@@ -37,17 +37,20 @@ const initialCards = [
     }
 ];
 
+console.log(initialCards.map(renderCards).join(''));
+
 const cardsList = document.querySelector('#element-template');
 
+//Заполнение шаблона карточки
 function renderCards(cardName, cardLink){
-  return`<li class="element">
+  const card = `<li class="element">
           <img class="element__photo" src="${cardLink}" alt="карачаевск">
           <p class="element__name">${cardName}</p>
           <button type="button" class="button element__like"></button>
         </li>`
 }
 
-cardsList.innerHTML = cardsList.innerHTML + cardsList.map
+cardsList.innerHTML = cardsList.innerHTML + initialCards.map(renderCards).join('')
 
 //Заполнение формы профиля
 function formSubmitHandler(evt) {
