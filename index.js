@@ -12,6 +12,8 @@ let body = document.querySelector('.body')
 const cardsList = document.querySelector('.element-cards');
 const elementName = document.querySelector('.element__name');
 const elementPhoto = document.querySelector('.element__photo');
+const cardButton = document.querySelector('.profile__add-button')
+
 
 
 const initialCards = [
@@ -46,16 +48,30 @@ const initialCards = [
 
 
 //Заполнение шаблона карточки
-function renderCards(name, link){
-    const cardsArray = initialCards.forEach((card => getItem(card));
-    cardsList.append(...cardsArray)
+function renderCard(name, link) {
+    const cardTemplate = document.querySelector('#element-template').content;
+    const newCard = cardTemplate.querySelector('.element').cloneNode(true);
+    elementName.textContent = name;
+    elementPhoto.src = link;
+    elementPhoto.alt = name;
+    setActionsListeners(newCard);
+    return newCard;
 }
 
-initialCards.forEach(renderCards);
 
-/*cardsList.innerHTML = cardsList.innerHTML + initialCards.map(renderCards).join('')*/
 
-console.log(initialCards.map(renderCards).join(''));
+initialCards.forEach((newCard) => {
+    cardsList.append(renderCard(newCard.name, newCard.link));
+});
+
+/*initialCards.forEach(renderCard);*/
+
+function setActionsListeners(newCard) {
+    newCard.querySelector('.element__photo').addEventListener('click',openPopupZoom);
+    newCard.querySelector('.element__like').addEventListener('click',likeCard);
+    newCard.querySelector('.element__trash').addEventListener('click',deleteCard);
+};
+
 
 //Заполнение формы профиля
 function formSubmitHandler(evt) {
@@ -81,23 +97,10 @@ function openPopup(){
     nameInput.value = profileName.textContent;
     jobInput.value = profileDescription.textContent;
 }
-/*
-function openPopup(title, subtitle){
-  popup.classList.add('popup_opened')
-  body.classList.add('body_popup')
 
-  nameInput.value = title.textContent;
-  jobInput.value = subtitle.textContent;
-}*/
-
-function addCard(name, link){
-    const cardTemplate = document.querySelector('.element__name'/*'#element-template'*/).content;
-    /*const linkTemplate = document.querySelector('#element-template').content;*/
-
-
-}
 
 closeButton.addEventListener('click', closePopup);
 editButton.addEventListener('click', openPopup);
 /*editButton.addEventListener('click', openPopup(profileName, profileDescription));*/
 formElement.addEventListener('submit', formSubmitHandler);
+cardButton.addEventListener('click')
