@@ -9,6 +9,10 @@ let profileDescription = document.querySelector('.profile__subtitle');
 let popup = document.querySelector('.popup');
 let closeButton = document.querySelector('.popup__close');
 let body = document.querySelector('.body')
+const cardsList = document.querySelector('.element-cards');
+const elementName = document.querySelector('.element__name');
+const elementPhoto = document.querySelector('.element__photo');
+
 
 const initialCards = [
     {
@@ -37,20 +41,21 @@ const initialCards = [
     }
 ];
 
-console.log(initialCards.map(renderCards).join(''));
 
-const cardsList = document.querySelector('#element-template');
+
+
 
 //Заполнение шаблона карточки
-function renderCards(cardName, cardLink){
-  const card = `<li class="element">
-          <img class="element__photo" src="${cardLink}" alt="карачаевск">
-          <p class="element__name">${cardName}</p>
-          <button type="button" class="button element__like"></button>
-        </li>`
+function renderCards(name, link){
+    const cardsArray = initialCards.forEach((card => getItem(card));
+    cardsList.append(...cardsArray)
 }
 
-cardsList.innerHTML = cardsList.innerHTML + initialCards.map(renderCards).join('')
+initialCards.forEach(renderCards);
+
+/*cardsList.innerHTML = cardsList.innerHTML + initialCards.map(renderCards).join('')*/
+
+console.log(initialCards.map(renderCards).join(''));
 
 //Заполнение формы профиля
 function formSubmitHandler(evt) {
@@ -87,7 +92,7 @@ function openPopup(title, subtitle){
 
 function addCard(name, link){
     const cardTemplate = document.querySelector('.element__name'/*'#element-template'*/).content;
-    const linkTemplate = document.querySelector('.'/*'#element-template'*/).content;
+    /*const linkTemplate = document.querySelector('#element-template').content;*/
 
 
 }
