@@ -1,0 +1,28 @@
+.popup__button-save-img{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: white;
+  background-color: black;
+  width: 358px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 23px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px){
+  .popup__button-save-img{
+    width: 238px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.popup__button-save-img:hover{
+  opacity: 0.8;
+}
