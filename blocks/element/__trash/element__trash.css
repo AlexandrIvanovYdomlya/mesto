@@ -1,5 +1,11 @@
 .element__trash{
   overflow: hidden;
   object-fit: contain;
-  width: 100%;
+  width: 19px;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  background-color: transparent;
+  background-image: url("../../../images/trash.svg");
+  height: 19px;
 }

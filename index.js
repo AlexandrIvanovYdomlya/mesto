@@ -9,7 +9,7 @@ let profileDescription = document.querySelector('.profile__subtitle');
 let popup = document.querySelector('.popup');
 let closeButton = document.querySelector('.popup__close');
 let body = document.querySelector('.body')
-const cardsList = document.querySelector('.element-cards');
+const cardsList = document.querySelector('.elements__cards');
 const elementName = document.querySelector('.element__name');
 const elementPhoto = document.querySelector('.element__photo');
 const cardButton = document.querySelector('.profile__add-button')
@@ -51,10 +51,10 @@ const initialCards = [
 function renderCard(name, link) {
     const cardTemplate = document.querySelector('#element-template').content;
     const newCard = cardTemplate.querySelector('.element').cloneNode(true);
-    elementName.textContent = name;
-    elementPhoto.src = link;
-    elementPhoto.alt = name;
-    setActionsListeners(newCard);
+    newCard.querySelector('.element__name').textContent = name;
+    newCard.querySelector('.element__photo').src = link;
+    newCard.querySelector('.element__photo').alt = name;
+    /*setActionsListeners(newCard);*/
     return newCard;
 }
 
