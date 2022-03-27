@@ -52,14 +52,22 @@ const initialCards = [
 
 
 
+
 //Заполнение шаблона карточки
 function renderCard(name, link) {
     const cardTemplate = document.querySelector('#element-template').content;
     const newCard = cardTemplate.querySelector('.element').cloneNode(true);
+
     newCard.querySelector('.element__name').textContent = name;
     newCard.querySelector('.element__photo').src = link;
     newCard.querySelector('.element__photo').alt = name;
+
     /*setActionsListeners(newCard);*/
+    newCard.querySelector('.element__like').addEventListener('click', function (evt){
+        evt.target.classList.toggle('element__like_true');;
+    });
+    /*newCard.querySelector('.element__trash').addEventListener('click',)*/
+
     return newCard;
 }
 
@@ -70,6 +78,8 @@ initialCards.forEach((newCard) => {
 });
 
 /*initialCards.forEach(renderCard);*/
+
+
 
 function setActionsListeners(newCard) {
     newCard.querySelector('.element__photo').addEventListener('click',openPopupZoom);
@@ -88,7 +98,6 @@ function formSubmitHandler(evt) {
     closePopup();
 }
 
-//Закрытие модального окна
 function closePopup(){
     /*popup.classList.remove('popup_opened')*/
     popupAddCard.classList.remove('popup_opened')
@@ -114,7 +123,11 @@ function openPopupCard(){
     jobInput.value = profileDescription.textContent;
 }
 
-function openPopupZoomCard(){
+function openPopupZoomCard(name,link){
+    const zoomButton = document.querySelector('.button__zoom');
+    const zoomCard = zoomButton.closest('.popup__image');
+
+    zoomCard.querySelector();
     popupZoomCard.classList.add('popup_opened')
     body.classList.add('body_popup')
 
@@ -122,22 +135,6 @@ function openPopupZoomCard(){
     jobInput.value = profileDescription.textContent;*/
 }
 
-function like(){
-    /*const card = document.querySelector('.element');
-    //найти функцию лайка*/
-    document.querySelectorAll('.element__like').classList.toggle('.element__like_true');
-}
-
-//Удаление карточки
-/*deleteButton.addEventListener('click',function(){
-    const deleteButton = document.querySelector('.element__trash');
-    const listItem = deleteButton.closest('.element__trash');
-    listItem.remove();
-});
-
- */
-/*buttonLike.addEventListener('click',like);*/
-document.querySelectorAll('.element__like').closest('.element__like').addEventListener('click',like);
 
 closeButton.addEventListener('click', closePopup);
 buttonEditProfile.addEventListener('click', openPopupProfile);
@@ -148,3 +145,8 @@ buttonSaveImg.addEventListener('submit', renderCard);
 buttonClosePopupCard.addEventListener('click', closePopup);
 document.querySelector('.element__photo').addEventListener('click', openPopupZoomCard);
 buttonClosePopupZoom.addEventListener('click', closePopup);
+deleteButton.addEventListener('click', function (){
+    const deleteButton = document.querySelector('.element__trash');
+    const deleteItem = deleteButton.closest('.element');
+    deleteItem.remove();
+});

@@ -79,14 +79,16 @@
       <div class="popup popup_name_zoom-card">
         <div class="popup__container popup__container_type_img">
           <button type="button" class="button popup__close button__close-popup-zoom"></button>
-          <img src="https://images.unsplash.com/photo-1592318343309-853bcb2213ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"><!--вставить картинку-->
+          <img class="popup__image" src="https://images.unsplash.com/photo-1592318343309-853bcb2213ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"><!--вставить картинку-->
           <h2 class="popup__title">Редактировать профиль</h2>
         </div>
       </div>
 
         <template id="element-template">
           <li class="element">
-            <img class="element__photo" src="#" alt="">
+            <button type="button" class="button button__zoom">
+              <img class="element__photo" src="#" alt="">
+            </button>
             <div class="element__container">
               <p class="element__name"></p>
               <button type="button" class="button element__like"></button>
