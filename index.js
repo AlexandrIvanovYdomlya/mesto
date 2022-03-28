@@ -16,8 +16,6 @@ const cardsList = document.querySelector('.elements__cards');
 const elementName = document.querySelector('.element__name');
 const elementPhoto = document.querySelector('.element__photo');
 const buttonAddCard = document.querySelector('.profile__add-button');
-const inputImgName = document.querySelector('.popup-form__input_type_img-name');
-const inputImgLink = document.querySelector('.popup-form__input_type_img-link');
 const buttonSaveImg = document.querySelector('.popup__button-save-img');
 const buttonClosePopupCard = document.querySelector('.button__close-popup-card');
 const buttonClosePopupZoom = document.querySelector('.button__close-popup-zoom');
@@ -48,9 +46,12 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
+const formPopupCard = document.querySelector('.popup-form_card');
 
 
-
+initialCards.forEach((newCard) => {
+    cardsList.append(renderCard(newCard.name, newCard.link));
+});
 
 
 //Заполнение шаблона карточки
@@ -73,11 +74,6 @@ function renderCard(name, link) {
 
 
 
-initialCards.forEach((newCard) => {
-    cardsList.append(renderCard(newCard.name, newCard.link));
-});
-
-/*initialCards.forEach(renderCard);*/
 
 
 
@@ -106,22 +102,32 @@ function closePopup(){
     body.classList.remove('body_popup')
 }
 
-//Открытие модального окна
+//Открытие модального окна профиля
 function openPopupProfile(){
     popupProfile.classList.add('popup_opened')
     body.classList.add('body_popup')
-
-    nameInput.value = profileName.textContent;
-    jobInput.value = profileDescription.textContent;
 }
 
 function openPopupCard(){
     popupAddCard.classList.add('popup_opened')
     body.classList.add('body_popup')
 
-    nameInput.value = profileName.textContent;
-    jobInput.value = profileDescription.textContent;
+
 }
+
+//Заполнение формы карточки
+function formSubmitHandlerCard(evt) {
+    evt.preventDefault();
+
+    const inputImgName = evt.target.querySelector('.popup-form__input_type_img-name').value;
+    const inputImgLink = evt.target.querySelector('.popup-form__input_type_img-link').value;
+
+    cardsList.prepend(renderCard(inputImgName, inputImgLink));
+
+    closePopup();
+    console.log({inputImgName, inputImgLink});
+}
+formPopupCard.addEventListener('submit', formSubmitHandlerCard);
 
 function openPopupZoomCard(name,link){
     const zoomButton = document.querySelector('.button__zoom');
@@ -141,12 +147,14 @@ buttonEditProfile.addEventListener('click', openPopupProfile);
 buttonAddCard.addEventListener('click', openPopupCard);
 /*editButton.addEventListener('click', openPopup(profileName, profileDescription));*/
 formElement.addEventListener('submit', formSubmitHandler);
-buttonSaveImg.addEventListener('submit', renderCard);
+buttonSaveImg.addEventListener('submit', formSubmitHandlerCard);
 buttonClosePopupCard.addEventListener('click', closePopup);
 document.querySelector('.element__photo').addEventListener('click', openPopupZoomCard);
 buttonClosePopupZoom.addEventListener('click', closePopup);
+/*
 deleteButton.addEventListener('click', function (){
     const deleteButton = document.querySelector('.element__trash');
     const deleteItem = deleteButton.closest('.element');
     deleteItem.remove();
-});
+});*/
+
