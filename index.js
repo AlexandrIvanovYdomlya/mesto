@@ -67,6 +67,9 @@ function renderCard(name, link) {
     newCard.querySelector('.element__like').addEventListener('click', function (evt){
         evt.target.classList.toggle('element__like_true');;
     });
+    newCard.querySelector('.element__trash').addEventListener('click', function (evt){
+        evt.currentTarget.closest('.element').remove();
+    });
     /*newCard.querySelector('.element__trash').addEventListener('click',)*/
 
     return newCard;
