@@ -17,8 +17,8 @@ const elementName = document.querySelector('.element__name');
 const elementPhoto = document.querySelector('.element__photo');
 const buttonAddCard = document.querySelector('.profile__add-button');
 const buttonSaveImg = document.querySelector('.popup__button-save-img');
-const buttonClosePopupCard = document.querySelector('.button__close-popup-card');
-const buttonClosePopupZoom = document.querySelector('.button__close-popup-zoom');
+const buttonClosePopupCard = document.querySelector('.button_close-popup-card');
+const buttonClosePopupZoom = document.querySelector('.button_close-popup-zoom');
 const buttonLike = document.querySelector('.element__like');
 const initialCards = [
     {
