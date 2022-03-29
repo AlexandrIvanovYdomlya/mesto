@@ -1,3 +1,28 @@
 .button__close-popup-zoom{
-  /*selector for DOM*/
+  width: 32px;
+  height: 32px;
+  margin-right: -32px;
+  margin-top: 0;
+  align-self: end;
+  background-image: url("../../../images/close-desktop.svg");
+  background-size: cover;
+  position: absolute;
+  top: -32px;
+  right: 0;
+  z-index: 2;
+  background-repeat: no-repeat;
+}
+
+
+@media screen and (max-width:767px) {
+  .popup__close-popup-zoom{
+    right: -262px;
+    top: -36px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.popup__close-popup-zoom:hover{
+  opacity: .6;
 }

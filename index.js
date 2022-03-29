@@ -65,12 +65,14 @@ function renderCard(name, link) {
 
     /*setActionsListeners(newCard);*/
     newCard.querySelector('.element__like').addEventListener('click', function (evt){
-        evt.target.classList.toggle('element__like_true');;
+        evt.target.classList.toggle('element__like_true');
     });
     newCard.querySelector('.element__trash').addEventListener('click', function (evt){
         evt.currentTarget.closest('.element').remove();
     });
-    /*newCard.querySelector('.element__trash').addEventListener('click',)*/
+    newCard.querySelector('.element__photo').addEventListener('click', openPopupZoomCard/*function (evt){
+        evt.openPopup(popupZoomCard);
+    }*/);
 
     return newCard;
 }
@@ -97,6 +99,11 @@ function formSubmitHandler(evt) {
     closePopup();
 }
 
+function openPopup(x){
+    x.classList.add('popup_opened')
+    body.classList.add('body_popup')
+}
+
 function closePopup(){
     /*popup.classList.remove('popup_opened')*/
     popupAddCard.classList.remove('popup_opened')
@@ -109,13 +116,15 @@ function closePopup(){
 function openPopupProfile(){
     popupProfile.classList.add('popup_opened')
     body.classList.add('body_popup')
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileDescription.textContent;
 }
 
+//Открытие попапа добавления карточки
 function openPopupCard(){
+
     popupAddCard.classList.add('popup_opened')
     body.classList.add('body_popup')
-
-
 }
 
 //Заполнение формы карточки
@@ -130,15 +139,22 @@ function formSubmitHandlerCard(evt) {
     closePopup();
     console.log({inputImgName, inputImgLink});
 }
+
 formPopupCard.addEventListener('submit', formSubmitHandlerCard);
 
-function openPopupZoomCard(name,link){
-    const zoomButton = document.querySelector('.button__zoom');
-    const zoomCard = zoomButton.closest('.popup__image');
+function openPopupZoomCard(evt){
+    popupZoomCard.querySelector('.popup__title').textContent = evt.target.alt;
+    popupZoomCard.querySelector('.popup__image').src = evt.target.src;
+    popupZoomCard.querySelector('.popup__image').alt = evt.target.alt;
+    /*popupZoomCard.classList.add('popup_opened')*/
+    openPopup(popupZoomCard)
+    /*body.classList.add('body_popup')*/
+    /*
+    elementPhoto.src = evt.target.src;
+    elementName.textContent = evt.target.alt;
+    elementPhoto.alt = evt.target.alt;
+*/
 
-    zoomCard.querySelector();
-    popupZoomCard.classList.add('popup_opened')
-    body.classList.add('body_popup')
 
     /*nameInput.value = profileName.textContent;
     jobInput.value = profileDescription.textContent;*/
@@ -147,17 +163,12 @@ function openPopupZoomCard(name,link){
 
 closeButton.addEventListener('click', closePopup);
 buttonEditProfile.addEventListener('click', openPopupProfile);
-buttonAddCard.addEventListener('click', openPopupCard);
+buttonAddCard.addEventListener('click', () => openPopup(popupAddCard));
 /*editButton.addEventListener('click', openPopup(profileName, profileDescription));*/
 formElement.addEventListener('submit', formSubmitHandler);
 buttonSaveImg.addEventListener('submit', formSubmitHandlerCard);
 buttonClosePopupCard.addEventListener('click', closePopup);
 document.querySelector('.element__photo').addEventListener('click', openPopupZoomCard);
 buttonClosePopupZoom.addEventListener('click', closePopup);
-/*
-deleteButton.addEventListener('click', function (){
-    const deleteButton = document.querySelector('.element__trash');
-    const deleteItem = deleteButton.closest('.element');
-    deleteItem.remove();
-});*/
+
 
