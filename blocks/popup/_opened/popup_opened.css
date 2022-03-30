@@ -1,6 +1,7 @@
 .popup_opened{
   display: flex;
-  position: absolute;
+  /*position: sticky;*/
+  /*position: absolute;*/
   /*overflow: hidden;*/
   visibility: visible;
   opacity: 1;

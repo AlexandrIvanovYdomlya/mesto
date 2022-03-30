@@ -2,8 +2,9 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 816px;
-  max-height: 540px;
+  height: 100%;
+  max-width: 75vw;
+  max-height: 75vh;
   margin: auto;
   border-radius: 0;
   background-color: transparent;

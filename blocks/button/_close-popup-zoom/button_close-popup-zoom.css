@@ -1,4 +1,4 @@
-.button__close-popup-zoom{
+.button_close-popup-zoom{
   width: 32px;
   height: 32px;
   margin-right: -32px;
@@ -9,20 +9,19 @@
   position: absolute;
   top: -32px;
   right: 0;
-  z-index: 2;
   background-repeat: no-repeat;
 }
 
 
-@media screen and (max-width:767px) {
-  .popup__close-popup-zoom{
-    right: -262px;
-    top: -36px;
+@media screen and (max-width:1023px) {
+  .button_close-popup-zoom{
+    right: 30px;
+    top: -30px;
     width: 20px;
     height: 20px;
   }
 }
 
-.popup__close-popup-zoom:hover{
+.button_close-popup-zoom:hover{
   opacity: .6;
 }

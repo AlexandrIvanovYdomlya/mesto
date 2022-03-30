@@ -99,9 +99,9 @@ function formSubmitHandler(evt) {
     closePopup();
 }
 
-function openPopup(x){
-    x.classList.add('popup_opened')
-    body.classList.add('body_popup')
+function openPopup(popup){
+    popup.classList.add('popup_opened')
+    /*body.classList.add('body_popup')*/  //требование ревьюера 4 спринта - фиксировать экран при открытии попапа
 }
 
 function closePopup(){

@@ -1,3 +1,4 @@
 .popup_name_zoom-card{
   /*селектор для поиска кнопки в DOM */
+  background-color: rgba(0, 0, 0, 0.9);
 }
