@@ -10,7 +10,7 @@
   background-color: transparent;
   position: relative;
 }
-
+/*
 @media screen and (max-width: 767px) {
   .popup__container_type_img{
     width: 282px;
@@ -18,3 +18,5 @@
     margin: auto;
   }
 }
+
+ */
