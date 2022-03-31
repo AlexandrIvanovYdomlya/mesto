@@ -1,24 +1,31 @@
 # Проект: Место
 
-### Сайт для изучения js
+### Проектная работа для изучения js
 
-https://alexandrivanovydomlya.github.io/mesto/index.html
+[Ссылка на страничку](https://alexandrivanovydomlya.github.io/mesto/index.html)
 
-* Figma
-* Картинки
+### Language:
 
-**Figma**
+* HTML5
+* CSS3
+* VanillaJS
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
 
-**Картинки**
 
-Доставать картинки предстоит из Фигмы. Это расхожая практика, поэтому полезно потренироваться.
-Не забудьте [оптимизировать картинки](https://tinypng.com/), чтобы ваш сайт загружался быстрее.
+* [Макет странички в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
 
+**Возможности**
+
+1. Редактирование профиля
+2. Добавление карточек с названием и фото
+3. Удаление карточки
+4. Кнопка "лайк"
+5. Просмотр крупного изображения карточки
+
+
+<!--(https://tinypng.com/)-->
  **Технологии**
   * nested
   * BEM
   * Adaptive layout
   
-Удачи!
