@@ -155,4 +155,25 @@ buttonSaveImg.addEventListener('submit', formSubmitHandlerCard);
 buttonClosePopupCard.addEventListener('click', () => closePopup(cardPopup));
 buttonClosePopupZoom.addEventListener('click', () => closePopup(imagePopup));
 
+//Пример из тренажера. Копирую чтоббы не потерять. Потом по-любому пригодится
+/*
+
+artistInput.addEventListener('keydown', function (evt) {
+    if (evt.key === 'Enter') {
+        addSong(artistInput.value, titleInput.value);
+    }
+});
+
+
+//Усовершенствованный вариант
+artistInput.addEventListener('keydown', keyHandler);
+
+titleInput.addEventListener('keydown', keyHandler);
+
+function keyHandler(evt) {
+  if (evt.key === 'Enter') {
+    addSong(artistInput.value, titleInput.value);
+  }
+}
+ */
 
