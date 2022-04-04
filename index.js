@@ -4,10 +4,11 @@ const cardPopup = document.querySelector('.popup_name_add-card');
 const imagePopup = document.querySelector('.popup_name_zoom-card');
 
 const formElement = document.querySelector('.popup__form');
+const formCard =document.querySelector('.popup-form_card');
 const nameInput = document.querySelector('.popup-form__input_type_name');
 const jobInput = document.querySelector('.popup-form__input_type_description');
 const buttonEditProfile = document.querySelector('.profile__edit-button');
-const saveButton = document.querySelector('.popup__edit-button');
+const buttonSave = document.querySelector('.popup__edit-button');
 const profileName = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__subtitle');
 /*const popup = document.querySelector('.popup');*/
@@ -80,18 +81,6 @@ function renderCard(name, link) {
     return newCard;
 }
 
-
-
-
-
-
-function setActionsListeners(newCard) {
-    newCard.querySelector('.element__photo').addEventListener('click',openPopupZoom);
-    newCard.querySelector('.element__like').addEventListener('click',likeCard);
-    newCard.querySelector('.element__trash').addEventListener('click',deleteCard);
-}
-
-
 //Заполнение формы профиля
 function formSubmitHandler(evt) {
     evt.preventDefault();
@@ -104,21 +93,17 @@ function formSubmitHandler(evt) {
 
 function openPopup(popup){
     popup.classList.add('popup_opened')
-    /*body.classList.add('body_popup')*/  //требование ревьюера 4 спринта - фиксировать экран при открытии попапа(миксом)
 }
 
 function closePopup(popup){
     popup.classList.remove('popup_opened')
-    /*body.classList.remove('body_popup')*///требование ревьюера 4 спринта - фиксировать экран при открытии попапа(миксом)
 }
 
 //Открытие модального окна профиля
 function openPopupProfile(){
-    openPopup(profilePopup)
-    /*profilePopup.classList.add('popup_opened')
-    body.classList.add('body_popup')*/
     nameInput.value = profileName.textContent;
     jobInput.value = profileDescription.textContent;
+    openPopup(profilePopup)
 }
 
 //Открытие попапа добавления карточки
@@ -133,6 +118,7 @@ function formSubmitHandlerCard(evt) {
     evt.preventDefault();
     cardsContainer.prepend(renderCard(inputImgName.value, inputImgLink.value));
     closePopup(cardPopup);
+    formCard.reset();
 }
 
 formPopupCard.addEventListener('submit', formSubmitHandlerCard);
@@ -151,7 +137,6 @@ buttonEditProfile.addEventListener('click', openPopupProfile);
 buttonAddCard.addEventListener('click', () => openPopup(cardPopup));
 /*editButton.addEventListener('click', openPopup(profileName, profileDescription));*/
 formElement.addEventListener('submit', formSubmitHandler);
-buttonSaveImg.addEventListener('submit', formSubmitHandlerCard);
 buttonClosePopupCard.addEventListener('click', () => closePopup(cardPopup));
 buttonClosePopupZoom.addEventListener('click', () => closePopup(imagePopup));
 
