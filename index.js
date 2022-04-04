@@ -54,6 +54,8 @@ const cardTemplate = document.querySelector('#element-template').content;
 const inputImgName = document.querySelector('.popup-form__input_type_img-name');
 const inputImgLink = document.querySelector('.popup-form__input_type_img-link');
 
+
+
 initialCards.forEach((newCard) => {
     cardsContainer.append(renderCard(newCard.name, newCard.link));
 });
@@ -140,25 +142,24 @@ formElement.addEventListener('submit', formSubmitHandler);
 buttonClosePopupCard.addEventListener('click', () => closePopup(cardPopup));
 buttonClosePopupZoom.addEventListener('click', () => closePopup(imagePopup));
 
-//Пример из тренажера. Копирую чтоббы не потерять. Потом по-любому пригодится
 /*
-
-artistInput.addEventListener('keydown', function (evt) {
-    if (evt.key === 'Enter') {
-        addSong(artistInput.value, titleInput.value);
-    }
-});
-
-
 //Усовершенствованный вариант
-artistInput.addEventListener('keydown', keyHandler);
+nameInput.addEventListener('keydown', keyHandler);
 
-titleInput.addEventListener('keydown', keyHandler);
+jobInput.addEventListener('keydown', keyHandler);
 
 function keyHandler(evt) {
   if (evt.key === 'Enter') {
-    addSong(artistInput.value, titleInput.value);
+    renderCard(nameInput.value, jobInput.value);
   }
 }
+
+
+
+
+
+
+
  */
+
 
