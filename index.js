@@ -103,6 +103,7 @@ function formSubmitHandler(evt) {
 function openPopup(popup){
     popup.classList.add('popup_opened')
     document.addEventListener('keydown', handlerEscUp);
+    document.addEventListener('click', overlayClick);
 }
 
 function closePopup(popup){
@@ -180,6 +181,13 @@ const handlerEscUp = (evt) => {
     const activePopup = document.querySelector('.popup_opened');
     if (evt.key === 'Escape') {
         closePopupEsc(activePopup);
+    }
+};
+
+const overlayClick = (evt) => {
+    if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
+        // закрываем только тогда, когда надо, т.е. только при том клике, которые происходит по нужному элементу
+        closePopup();
     }
 };
 
