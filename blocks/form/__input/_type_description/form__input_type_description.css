@@ -1,0 +1,19 @@
+.form__input_type_description{
+  /*этот класс нужен для index.js*/
+}
+
+.form__input_type_description:hover{
+
+}
+
+.form__input_type_description:focus{
+
+}
+
+.form__input_type_description:invalid{
+
+}
+
+.form__input_type_description:valid{
+
+}

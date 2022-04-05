@@ -1,5 +1,4 @@
-
-
+//
 const setEventListeners = (formElement) => {
     const inputList = Array.from(formElement.querySelectorAll('.form__input'));
     const buttonElement = formElement.querySelector('.form__submit');
@@ -11,10 +10,6 @@ const setEventListeners = (formElement) => {
         });
     });
 }
-
-
-
-
 
 const hasInvalidInput = (inputList) => {
     return inputList.some(inputElement => {
@@ -43,6 +38,8 @@ const hideInputError = ( formElement,inputElement) => {
     errorElement.classList.remove('form__input-error_active');
     errorElement.textContent = '';
 };
+
+//Проверка на валидность
 const checkInputValidity = (formElement, inputElement) => {
     if (!inputElement.validity.valid) {
         showInputError(formElement, inputElement, inputElement.validationMessage);
@@ -54,7 +51,7 @@ const checkInputValidity = (formElement, inputElement) => {
 
 
 const enableValidation = () => {
-    const formList = Array.from(document.querySelectorAll('.form'));
+    const formList = Array.from(document.querySelectorAll('.form[name="profile"]'));
     formList.forEach((formElement) => {
         formElement.addEventListener('submit', (evt) => {
             evt.preventDefault();
@@ -66,3 +63,55 @@ const enableValidation = () => {
     });
 };
 enableValidation();
+
+
+
+
+
+/*
+const formElementProfile = document.querySelector('.form');
+
+const formInputProfileName = formElementProfile.querySelector('.popup-form__input_type_name')
+const formInputProfileDescription = formElementProfile.querySelector('.ppopup-form__input_type_description');
+const formError = formElementProfile.querySelector(`.${formInputProfileName.id}-error`);
+
+const formElementCard = document.querySelector('.popup-form_card');
+const formInputImgName = formElementCard.querySelector('.popup-form__input_type_img-name');
+const formInputImgLink =formElementCard.querySelector('.popup-form__input_type_img-link');
+
+const showError = (input, errorMessage) => {
+    input.classList.add('popup-form__input_type_error');
+    formError.textContent = errorMessage;
+    formError.classList.add('popup-form__input-error_active');
+};
+
+const hideError = (input) => {
+    input.classList.remove('popup-form__input_type_error');
+};
+
+const checkInputValidity = () => {
+    if (!formInputProfileName.validity.valid) {
+        showError (formInputProfileName, formInputProfileName.validationMessage);
+    } else {
+        hideError(formInputProfileName);
+    }
+};
+
+formElementProfile.addEventListener('submit', function (evt) {
+    evt.preventDefault();
+});
+
+formInputProfileName.addEventListener('input', function () {
+    checkInputValidity();
+});
+*/
+
+/*
+formInputProfileName.addEventListener('input', function (evt){
+    console.log(evt.target.validity.valid);
+})
+*/
+
+/*========================== =============================*/
+
+

@@ -1,0 +1,7 @@
+.form__input_type_img-name{
+  /*селектор для DOM*/
+}
+
+.form__input_type_img-name::placeholder{
+
+}

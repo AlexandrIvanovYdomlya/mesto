@@ -4,9 +4,9 @@ const cardPopup = document.querySelector('.popup_name_add-card');
 const imagePopup = document.querySelector('.popup_name_zoom-card');
 
 const formElement = document.querySelector('.popup__form');
-const formCard =document.querySelector('.popup-form_card');
-const nameInput = document.querySelector('.popup-form__input_type_name');
-const jobInput = document.querySelector('.popup-form__input_type_description');
+const formCard =document.querySelector('.form_card');
+const nameInput = document.querySelector('.form__input_type_name');
+const jobInput = document.querySelector('.form__input_type_description');
 const buttonEditProfile = document.querySelector('.profile__edit-button');
 const buttonSave = document.querySelector('.popup__edit-button');
 const profileName = document.querySelector('.profile__title');
@@ -49,10 +49,10 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
-const formPopupCard = document.querySelector('.popup-form_card');
+const formPopupCard = document.querySelector('.form_card');
 const cardTemplate = document.querySelector('#element-template').content;
-const inputImgName = document.querySelector('.popup-form__input_type_img-name');
-const inputImgLink = document.querySelector('.popup-form__input_type_img-link');
+const inputImgName = document.querySelector('.form__input_type_img-name');
+const inputImgLink = document.querySelector('.form__input_type_img-link');
 
 
 
@@ -70,12 +70,19 @@ function renderCard(name, link) {
     newCard.querySelector('.element__photo').alt = name;
 
     /*setActionsListeners(newCard);*/
-    newCard.querySelector('.element__like').addEventListener('click', function (evt){
+    /*newCard.querySelector('.element__like').addEventListener('click', function (evt){
         evt.target.classList.toggle('element__like_true');
     });
+
+     */
+/*
     newCard.querySelector('.element__trash').addEventListener('click', function (evt){
         evt.currentTarget.closest('.element').remove();
     });
+
+ */
+
+
     newCard.querySelector('.element__photo').addEventListener('click', openPopupZoomCard/*function (evt){
         evt.openPopup(popupZoomCard);
     }*/);
@@ -161,5 +168,32 @@ function keyHandler(evt) {
 
 
  */
+
+const closePopupEsc = (popup) => {
+    document.removeEventListener('keydown', handlerEscUp);
+    popup.classList.remove('popup_opened');
+};
+
+const handlerEscUp = (evt) => {
+    /*evt.preventDefault();*/
+    const activePopup = document.querySelector('.popup_opened');
+    if (evt.key === 'Escape') {
+        closePopupEsc(activePopup);
+    }
+};
+
+cardsContainer.addEventListener('click', function (evt) {
+    if (evt.target.classList.contains('element__like')) {
+        evt.target.classList.toggle('element__like_true');
+    }
+});
+
+cardsContainer.addEventListener('click', function (evt) {
+    if (evt.target.classList.contains('element__trash')) {
+        console.log('test');
+        /*evt.target.classList.closest('.element').remove();*/
+    }
+});
+
 
 

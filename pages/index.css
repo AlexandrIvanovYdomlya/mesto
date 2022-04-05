@@ -21,9 +21,9 @@
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__edit-button/popup__edit-button.css);
-@import url(../blocks/popup-form/__input/popup-form__input.css);
-@import url(../blocks/popup-form/__input/_type_description/input_type_description.css);
-@import url(../blocks/popup-form/__input/_type_name/input_type_name.css);
+@import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__input/_type_description/form__input_type_description.css);
+@import url(../blocks/form/__input/_type_name/form__input_type_name.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__close/popup__close.css);
 @import url(../blocks/button/button.css);
@@ -44,3 +44,4 @@
 @import url(../blocks/popup/__gallery/popup__gallery.css);
 @import url(../blocks/popup/__title/_zoom/popup__title_zoom.css);
 @import url(../blocks/popup/_name_zoom-card/popup_name_zoom-card.css);
+@import url(../blocks/form/__input-error/form__input-error.css);
