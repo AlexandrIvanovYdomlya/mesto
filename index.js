@@ -75,12 +75,12 @@ function renderCard(name, link) {
     });
 
      */
-/*
+
     newCard.querySelector('.element__trash').addEventListener('click', function (evt){
         evt.currentTarget.closest('.element').remove();
     });
 
- */
+
 
 
     newCard.querySelector('.element__photo').addEventListener('click', openPopupZoomCard/*function (evt){
@@ -102,6 +102,7 @@ function formSubmitHandler(evt) {
 
 function openPopup(popup){
     popup.classList.add('popup_opened')
+    document.addEventListener('keydown', handlerEscUp);
 }
 
 function closePopup(popup){

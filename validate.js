@@ -1,5 +1,5 @@
 //
-const setEventListeners = (formElement) => {
+const setEventListeners = (formElement) => {//Добавление слушателей каждой форме
     const inputList = Array.from(formElement.querySelectorAll('.form__input'));
     const buttonElement = formElement.querySelector('.form__submit');
     toggleButtonState(inputList, buttonElement);
@@ -26,21 +26,21 @@ const toggleButtonState = (inputList, buttonElement) => {
 }
 
 const showInputError = (formElement, inputElement, errorMessage) => {
-    const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+    const errorElement = formElement.querySelector(`.${inputElement.id}-error`);//Найденная внутри формы ошибка
     inputElement.classList.add('form__input_type_error');
     errorElement.textContent = errorMessage;
     errorElement.classList.add('form__input-error_active');
 };
 
 const hideInputError = ( formElement,inputElement) => {
-    const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+    const errorElement = formElement.querySelector(`.${inputElement.id}-error`);//Найденная внутри формы ошибка
     inputElement.classList.remove('form__input_type_error');
     errorElement.classList.remove('form__input-error_active');
     errorElement.textContent = '';
 };
 
 //Проверка на валидность
-const checkInputValidity = (formElement, inputElement) => {
+const checkInputValidity = (formElement, inputElement) => {//Проверить правильность ввода
     if (!inputElement.validity.valid) {
         showInputError(formElement, inputElement, inputElement.validationMessage);
     } else {
