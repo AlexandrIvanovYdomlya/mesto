@@ -201,7 +201,7 @@ cardsContainer.addEventListener('click', function (evt) {
 
 cardsContainer.addEventListener('click', function (evt) {
     if (evt.target.classList.contains('element__trash')) {
-        evt.target.classList.remove('element');
+        evt.target.closest('.element').remove();
     }
 });
 

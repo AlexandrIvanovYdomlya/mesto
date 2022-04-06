@@ -11,9 +11,9 @@
 }
 
 .form__input_type_description:invalid{
-
+  border-bottom: 1px solid #FF0000;
 }
 
 .form__input_type_description:valid{
-
+  border-bottom: 1px solid green;
 }

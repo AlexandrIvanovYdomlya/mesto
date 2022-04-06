@@ -1,3 +1,10 @@
 .form__input_type_img-link{
   /*селектор для DOM*/
 }
+.form__input_type_img-link:invalid{
+  border-bottom: 1px solid #FF0000;
+}
+
+.form__input_type_img-link:valid{
+  border-bottom: 1px solid green;
+}

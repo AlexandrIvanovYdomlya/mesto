@@ -5,3 +5,10 @@
 .form__input_type_img-name::placeholder{
 
 }
+.form__input_type_img-name:invalid{
+  border-bottom: 1px solid #FF0000;
+}
+
+.form__input_type_img-name:valid{
+  border-bottom: 1px solid green;
+}

@@ -44,9 +44,12 @@ function setCustomError(input) {
         const currentLength = input.value.length;
         const min = input.getAttribute('minlength');
         const max = input.getAttribute('maxlength');
-        input.setCustomValidity(
-            `Строка имеет неверную длинну. Введено ${currentLength} символов, а должно быть от ${min} до ${max}`
-        );
+        let errorMessage = `Строка имеет неверную длинну. Введено ${currentLength} символов, а должно быть от ${min}`
+
+        if (max) {
+            errorMessage += `до ${max}`;
+        }
+        input.setCustomValidity();
     }
 
     if (input.typeMismatch) {
