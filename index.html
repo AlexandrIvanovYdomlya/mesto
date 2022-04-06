@@ -65,9 +65,9 @@
           <button type="button" class="button popup__close button_close-popup-card"></button>
           <h2 class="popup__title">Новое место</h2>
           <form class="popup__form form form_card" name="card" novalidate>
-            <input type="text" id="img-input" placeholder="Название" class="form__input form__input_type_img-name">
+            <input type="text" id="img-input" minlength="2" required maxlength="30" placeholder="Название" class="form__input form__input_type_img-name">
             <span id="img-input-error" class="form__input-error"></span>
-            <input type="url" id="link-input" placeholder="Ссылка на картинку" class="form__input form__input_type_img-link">
+            <input type="url" id="link-input" required placeholder="Ссылка на картинку" class="form__input form__input_type_img-link">
             <span id="link-input-error" class="form__input-error"></span>
             <button class="button form__submit popup__button-save-img" type="submit" aria-label="кнопка сохранения">
               Сохранить
