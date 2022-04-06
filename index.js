@@ -154,7 +154,7 @@ buttonClosePopupCard.addEventListener('click', () => closePopup(cardPopup));
 buttonClosePopupZoom.addEventListener('click', () => closePopup(imagePopup));
 
 /*
-//Усовершенствованный вариант
+
 nameInput.addEventListener('keydown', keyHandler);
 
 jobInput.addEventListener('keydown', keyHandler);
