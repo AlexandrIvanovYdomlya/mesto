@@ -63,7 +63,7 @@ const enableValidation = () => {
     });
 };
 enableValidation({
-    formSelector: '.popup__form',
+    formSelector: '.popup__form',//форма
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button',
     inactiveButtonClass: '.popup__button_disabled',
