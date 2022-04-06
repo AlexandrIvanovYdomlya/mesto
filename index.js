@@ -75,11 +75,13 @@ function renderCard(name, link) {
     });
 
      */
-
+/*
     newCard.querySelector('.element__trash').addEventListener('click', function (evt){
         evt.currentTarget.closest('.element').remove();
     });
 
+
+ */
 
 
 
@@ -199,8 +201,7 @@ cardsContainer.addEventListener('click', function (evt) {
 
 cardsContainer.addEventListener('click', function (evt) {
     if (evt.target.classList.contains('element__trash')) {
-        console.log('test');
-        /*evt.target.classList.closest('.element').remove();*/
+        evt.target.classList.remove('element');
     }
 });
 

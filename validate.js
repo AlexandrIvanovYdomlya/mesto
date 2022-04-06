@@ -16,7 +16,7 @@ const hasInvalidInput = (inputList) => {
         return !inputElement.validity.valid;
     });
 }
-
+//Неактивная кнопка
 const toggleButtonState = (inputList, buttonElement) => {
     if (hasInvalidInput(inputList)) {
         buttonElement.classList.add('button_inactive');
@@ -62,7 +62,14 @@ const enableValidation = () => {
         });
     });
 };
-enableValidation();
+enableValidation({
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: '.popup__button_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: '.popup__error_visible'
+});
 
 
 
