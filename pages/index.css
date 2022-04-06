@@ -45,3 +45,4 @@
 @import url(../blocks/popup/__title/_zoom/popup__title_zoom.css);
 @import url(../blocks/popup/_name_zoom-card/popup_name_zoom-card.css);
 @import url(../blocks/form/__input-error/form__input-error.css);
+@import url(../blocks/form/__submit/_invalid/form__submit_invalid.css);

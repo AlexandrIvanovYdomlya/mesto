@@ -3,6 +3,11 @@ function enableValidation() {
 
     form.addEventListener('submit', handleFormSubmit);
     form.addEventListener('input', handleFormInput);
+
+    const form2 =document.querySelector('.popup__form[name="card"]');
+
+    form2.addEventListener('submit', handleFormSubmit);
+    form2.addEventListener('input', handleFormInput);
 }
 
 function handleFormSubmit(event) {
@@ -27,7 +32,7 @@ function handleFormInput (event) {
     //2. Показать ошибки пользователя
     setFieldError(input);
     //3. Деактивировать кномку когда форма невалидна
-    set
+    setSubmitButtonState(form);
 }
 
 function setCustomError(input) {
@@ -54,5 +59,19 @@ function setFieldError (input) {
     span.textContent = input.validationMessage;
 }
 
+function setSubmitButtonState(form) {
+    const button = form.querySelector('.form__submit');
+    const isValid = form.checkValidity();
+
+    if (isValid) {
+        button.classList.add('form__submit_valid')
+        button.classList.remove('form__submit_invalid')
+        button.removeAttribute('disabled');
+    } else {
+        button.classList.add('form__submit_invalid')
+        button.classList.remove('form__submit_valid')
+        button.setAttribute('disabled', 'disabled');
+    }
+}
 
 enableValidation();
