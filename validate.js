@@ -77,11 +77,3 @@ const enableValidation = () => {
 
 enableValidation(obj);
 
-
-/*
- const formList = Array.from(document.querySelectorAll());//'.form[name="profile"]'
-    formList.forEach((formElement) => {
-        formElement.addEventListener('submit', (evt) => {
-            evt.preventDefault();
-        });
- */
