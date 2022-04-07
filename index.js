@@ -110,6 +110,8 @@ function openPopup(popup){
 
 function closePopup(popup){
     popup.classList.remove('popup_opened')
+    document.removeEventListener('keydown', handlerEscUp);
+
 }
 
 //Открытие модального окна профиля
@@ -172,24 +174,26 @@ function keyHandler(evt) {
 
 
  */
-
+/*
 const closePopupEsc = (popup) => {
     document.removeEventListener('keydown', handlerEscUp);
     popup.classList.remove('popup_opened');
+    closePopup(popup)
 };
+*/
 
 const handlerEscUp = (evt) => {
     /*evt.preventDefault();*/
     const activePopup = document.querySelector('.popup_opened');
     if (evt.key === 'Escape') {
-        closePopupEsc(activePopup);
+        closePopup(activePopup);
     }
 };
 
 const overlayClick = (evt) => {
-    if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
-        // закрываем только тогда, когда надо, т.е. только при том клике, которые происходит по нужному элементу
-        closePopup();
+    const activePopup = document.querySelector('.popup_opened');
+    if (evt.target.classList.contains('popup')) {
+        closePopup(activePopup);
     }
 };
 

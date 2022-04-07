@@ -1,5 +1,5 @@
-//
-const setEventListeners = (formElement) => {//Добавление слушателей каждой форме
+//Добавление слушателей каждой форме
+const setEventListeners = (formElement) => {
     const inputList = Array.from(formElement.querySelectorAll('.form__input'));
     const buttonElement = formElement.querySelector('.form__submit');
     toggleButtonState(inputList, buttonElement);
@@ -19,9 +19,9 @@ const hasInvalidInput = (inputList) => {
 //Неактивная кнопка
 const toggleButtonState = (inputList, buttonElement) => {
     if (hasInvalidInput(inputList)) {
-        buttonElement.classList.add('button_inactive');
+        buttonElement.classList.add('form__submit_invalid');
     } else {
-        buttonElement.classList.remove('button_inactive');
+        buttonElement.classList.remove('form__submit_invalid');
     }
 }
 
@@ -56,17 +56,19 @@ const enableValidation = () => {
         formElement.addEventListener('submit', (evt) => {
             evt.preventDefault();
         });
-        const fieldsetList = Array.from(formElement.querySelectorAll('.form__set'));
+        /*const fieldsetList = Array.from(formElement.querySelectorAll('.form__set'));
         fieldsetList.forEach((fieldSet) => {
             setEventListeners(fieldSet);
         });
+
+         */
     });
 };
 enableValidation({
     formSelector: '.popup__form',//форма
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__button',
-    inactiveButtonClass: '.popup__button_disabled',
+    inputSelector: '.form__input',//поле ввода
+    submitButtonSelector: '.form__submit',//кнопка отпраки
+    inactiveButtonClass: '.form__submit_invalid',//
     inputErrorClass: 'popup__input_type_error',
     errorClass: '.popup__error_visible'
 });
