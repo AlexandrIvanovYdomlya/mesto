@@ -1,7 +1,7 @@
 .form__input_type_name{
   /*этот класс нужен для index.js*/
 }
-
+/*
 .form__input_type_name:invalid{
   border-bottom: 1px solid #FF0000;
 }
@@ -17,3 +17,5 @@
 .form__input_type_name:focus{
   border-bottom-color: #007DFF;
 }
+
+ */
