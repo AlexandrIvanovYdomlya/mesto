@@ -10,8 +10,8 @@ const obj = {
 
 //Добавление слушателей каждой форме
 const setEventListeners = (formElement) => {
-    const inputList = Array.from(formElement.querySelectorAll(enableValidation['inputSelector']));
-    const buttonElement =  formElement.querySelector(enableValidation['submitButtonSelector']);
+    const inputList = Array.from(formElement.querySelectorAll(enableValidation.inputSelector));
+    const buttonElement =  formElement.querySelector(enableValidation.submitButtonSelector);
     toggleButtonState(inputList, buttonElement);
     inputList.forEach((inputElement) => {
         inputElement.addEventListener('input', function () {
@@ -29,23 +29,23 @@ const hasInvalidInput = (inputList) => {
 //Неактивная кнопка
 const toggleButtonState = (inputList, buttonElement) => {
     if (hasInvalidInput(inputList)) {
-        buttonElement.classList.add(enableValidation['inactiveButtonClass']);
+        buttonElement.classList.add(enableValidation.inactiveButtonClass);
     } else {
-        buttonElement.classList.remove(enableValidation['inactiveButtonClass']);
+        buttonElement.classList.remove(enableValidation.inactiveButtonClass);
     }
 }
 
 const showInputError = (formElement, inputElement, errorMessage) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);//Найденная внутри формы ошибка
-    inputElement.classList.add(enableValidation['inputErrorClass']);
+    inputElement.classList.add(enableValidation.inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add(enableValidation['errorClass']);
+    errorElement.classList.add(enableValidation.errorClass);
 };
 
 const hideInputError = (formElement, inputElement) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);//Найденная внутри формы ошибка
-    inputElement.classList.remove(enableValidation['inputErrorClass']);
-    errorElement.classList.remove(enableValidation['errorClass']);
+    inputElement.classList.remove(enableValidation.inputErrorClass);
+    errorElement.classList.remove(enableValidation.errorClass);
     errorElement.textContent = '';
 };
 
@@ -61,12 +61,14 @@ const checkInputValidity = (formElement, inputElement) => {//Проверить 
 
 
 const enableValidation = () => {
-    const formList = Array.from(document.querySelectorAll(enableValidation['formSelector']));
+    const formList = Array.from(document.querySelectorAll(enableValidation.formSelector));
+    console.log(formList);
     formList.forEach((formElement) => {
-        formElement.addEventListener((enableValidation['submitButtonSelector']), (evt) => {
+        formElement.addEventListener((enableValidation.submitButtonSelector), (evt) => {
             evt.preventDefault();
         });
-        const fieldsetList = Array.from(formElement.querySelectorAll(enableValidation['inputSelector']));
+
+        const fieldsetList = Array.from(formElement.querySelectorAll(enableValidation.inputSelector));
         fieldsetList.forEach((fieldSet) => {
             setEventListeners(fieldSet);
         });
@@ -76,4 +78,4 @@ const enableValidation = () => {
 };
 
 enableValidation(obj);
-
+console.log(obj);
