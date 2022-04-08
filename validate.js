@@ -69,12 +69,8 @@ const enableValidation = (obj) => {
             evt.preventDefault();
             console.log('disable work');
         });
+        setEventListeners(formElement, obj);
 
-        const fieldsetList = Array.from(formElement.querySelectorAll(obj.inputSelector));
-        fieldsetList.forEach((fieldSet) => {
-            setEventListeners(fieldSet);
-
-        });
 
 
     });
