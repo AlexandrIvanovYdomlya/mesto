@@ -9,9 +9,9 @@ const obj = {
 };
 
 //Добавление слушателей каждой форме
-const setEventListeners = (formElement) => {
-    const inputList = Array.from(formElement.querySelectorAll(enableValidation.inputSelector));
-    const buttonElement =  formElement.querySelector(enableValidation.submitButtonSelector);
+const setEventListeners = (formElement, obj) => {
+    const inputList = Array.from(formElement.querySelectorAll(obj.inputSelector));
+    const buttonElement =  formElement.querySelector(obj.submitButtonSelector);
     toggleButtonState(inputList, buttonElement);
     inputList.forEach((inputElement) => {
         inputElement.addEventListener('input', function () {
@@ -27,26 +27,26 @@ const hasInvalidInput = (inputList) => {
     });
 }
 //Неактивная кнопка
-const toggleButtonState = (inputList, buttonElement) => {
+const toggleButtonState = (inputList, buttonElement, obj) => {
     if (hasInvalidInput(inputList)) {
-        buttonElement.classList.add(enableValidation.inactiveButtonClass);
+        buttonElement.classList.add(obj.inactiveButtonClass);
         console.log('disable work');
     } else {
-        buttonElement.classList.remove(enableValidation.inactiveButtonClass);
+        buttonElement.classList.remove(obj.inactiveButtonClass);
     }
 }
 
-const showInputError = (formElement, inputElement, errorMessage) => {
+const showInputError = (formElement, inputElement, errorMessage, obj) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);//Найденная внутри формы ошибка
-    inputElement.classList.add(enableValidation.inputErrorClass);
+    inputElement.classList.add(obj.inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add(enableValidation.errorClass);
+    errorElement.classList.add(obj.errorClass);
 };
 
-const hideInputError = (formElement, inputElement) => {
+const hideInputError = (formElement, inputElement, obj) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);//Найденная внутри формы ошибка
-    inputElement.classList.remove(enableValidation.inputErrorClass);
-    errorElement.classList.remove(enableValidation.errorClass);
+    inputElement.classList.remove(obj.inputErrorClass);
+    errorElement.classList.remove(obj.errorClass);
     errorElement.textContent = '';
 };
 
@@ -61,16 +61,16 @@ const checkInputValidity = (formElement, inputElement) => {//Проверить 
 
 
 
-const enableValidation = () => {
-    const formList = Array.from(document.querySelectorAll(enableValidation.formSelector));
+const enableValidation = (obj) => {
+    const formList = Array.from(document.querySelectorAll(obj.formSelector));
     console.log(formList);
     formList.forEach((formElement) => {
-        formElement.addEventListener((enableValidation.submitButtonSelector), (evt) => {
+        formElement.addEventListener((obj.submitButtonSelector), (evt) => {
             evt.preventDefault();
             console.log('disable work');
         });
 
-        const fieldsetList = Array.from(formElement.querySelectorAll(enableValidation.inputSelector));
+        const fieldsetList = Array.from(formElement.querySelectorAll(obj.inputSelector));
         fieldsetList.forEach((fieldSet) => {
             setEventListeners(fieldSet);
 
