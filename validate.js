@@ -52,9 +52,9 @@ const hideInputError = (formElement, inputElement, obj) => {
 //Проверка на валидность
 const checkInputValidity = (formElement, inputElement) => {//Проверить правильность ввода
     if (!inputElement.validity.valid) {
-        showInputError(formElement, inputElement, inputElement.validationMessage);
+        showInputError(formElement, inputElement, inputElement.validationMessage, obj);
     } else {
-        hideInputError(formElement, inputElement);
+        hideInputError(formElement, inputElement, obj);
     }
 };
 
