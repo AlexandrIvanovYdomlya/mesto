@@ -12,25 +12,24 @@ const obj = {
 const setEventListeners = (formElement, obj) => {
     const inputList = Array.from(formElement.querySelectorAll(obj.inputSelector));
     const buttonElement =  formElement.querySelector(obj.submitButtonSelector);
-    toggleButtonState(inputList, buttonElement);
+    toggleButtonState(inputList, buttonElement, obj);
     inputList.forEach((inputElement) => {
         inputElement.addEventListener('input', function () {
-            checkInputValidity(formElement, inputElement);
-            toggleButtonState(inputList, buttonElement);
+            checkInputValidity(formElement, inputElement, obj);
+            toggleButtonState(inputList, buttonElement, obj);
         });
     });
 }
 
 const hasInvalidInput = (inputList) => {
-    return inputList.some(inputElement => {
+    return inputList.some((inputElement) => {
         return !inputElement.validity.valid;
     });
 }
 //Неактивная кнопка
 const toggleButtonState = (inputList, buttonElement, obj) => {
-    if (hasInvalidInput(inputList)) {
+    if (hasInvalidInput(inputList, obj)) {
         buttonElement.classList.add(obj.inactiveButtonClass);
-        console.log('disable work');
     } else {
         buttonElement.classList.remove(obj.inactiveButtonClass);
     }
@@ -65,9 +64,8 @@ const enableValidation = (obj) => {
     const formList = Array.from(document.querySelectorAll(obj.formSelector));
     console.log(formList);
     formList.forEach((formElement) => {
-        formElement.addEventListener((obj.submitButtonSelector), (evt) => {
+        formElement.addEventListener('submit', function (evt) {
             evt.preventDefault();
-            console.log('disable work');
         });
         setEventListeners(formElement, obj);
 
@@ -77,4 +75,4 @@ const enableValidation = (obj) => {
 };
 
 enableValidation(obj);
-console.log(obj);
+
